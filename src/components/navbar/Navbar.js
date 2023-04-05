@@ -1,41 +1,66 @@
-import React from 'react';
-import { Link } from "react-scroll";
-import '../navbar/NavbarStyle.css';
-import  Home  from '../home/home';
-import {AiOutlineHome} from 'react-icons/ai';
-import {AiOutlineUser} from 'react-icons/ai';
-import {RiServiceLine} from 'react-icons/ri';
-import {AiOutlinePhone} from 'react-icons/ai';
-import {HiOutlineDocumentReport} from 'react-icons/hi';
-
-import {AiFillCloseSquare} from 'react-icons/ai'
+import React, { useState, useEffect } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
+import "./NavbarStyle.css";
+import { MenuItems } from "./MenuItems";
+import Logo from "../../assets/logo.png";
 
 const Navbar = () => {
- 
-  return (
-  
-  <nav>
-    <div className="nav__container">
-      <div className="nav__action">
-        <Link to='home' activeClass='active' smooth spy className='nav__section'>
-         <AiOutlineHome />
-        </Link>
-        <Link to='about' activeClass='active' smooth spy className='nav__section'>
-         <AiOutlineUser />
-        </Link>
-        <Link to='portfolio' activeClass='active' smooth spy className='nav__section'>
-         <RiServiceLine />
-        </Link>
-        <Link to='services' activeClass='active' smooth spy className='nav__section'>
-         <HiOutlineDocumentReport />
-        </Link>
-        <Link to='contact' activeClass='active' smooth spy className='nav__section'>
-         <AiOutlinePhone/>
-        </Link>
-      </div>
-    </div>
-  </nav>
-  )
-}
+  const [isScrolled, setIsScrolled] = useState(false);
 
-export default Navbar
+  const handleScroll = () => {
+    if (window.innerWidth <= 768) {
+      setIsScrolled(false);
+    } else {
+      if (window.pageYOffset > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  return (
+    <nav className={isScrolled ? "navbar scrolled" : "navbar"}>
+      <div className="navbar-container">
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="navbar-logo"
+          onClick={scrollToTop}
+        >
+          <img src={Logo} alt="" className="logo"></img>
+        </Link>
+        <ul className="nav-menu">
+          {MenuItems.map((item, index) => {
+            return (
+              <Link
+                key={item.id}
+                to={item.to}
+                activeClass="active"
+                smooth
+                spy
+                className={item.className}
+              >
+                {item.title && <span className="nav-title">{item.title}</span>}
+                {item.icon && <span className="nav-icon">{item.icon}</span>}
+              </Link>
+            );
+          })}
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

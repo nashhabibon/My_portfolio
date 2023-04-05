@@ -7,6 +7,7 @@ import About from './components/about/about';
 import Contact from './components/contact/contact';
 import Projects from './components/portfolio/portfolio';
 import Services from './components/services/services';
+import SocialMedia from './components/socialmedia/socialmedia';
 import bg from './assets/falling-stars.json';
 import Lottie from 'lottie-react';
 
@@ -15,22 +16,13 @@ function App() {
   return (
     
     <div className="App">
-      <div className="app__container">
         <Navbar/>
+        <SocialMedia/>
         <Home/>
         <About/>
         <Projects/>
         <Services/>
         <Contact/>
-      </div>
-      {/* <div className="background">
-        <Lottie
-          animationData={bg}
-          loop
-          autoplay
-          style={{ width: '100%', height: '100%' }}
-        />
-      </div> */}
     </div>
   );
 }

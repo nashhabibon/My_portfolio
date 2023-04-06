@@ -1,14 +1,9 @@
-import {
-  AiOutlineFacebook,
-  AiOutlineInstagram,
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineBehanceSquare,
-  AiOutlineClose,
-} from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import { BiMenuAltRight } from "react-icons/bi";
+import { Link } from "react-scroll";
 import React, { useState, useEffect } from "react";
 import "./socialmedia.css";
+import { SocialItem } from "./socialmediaItems";
 
 const SocialMedia = () => {
   const [menuClass, setMenuClass] = useState("menu unclick");
@@ -30,26 +25,20 @@ const SocialMedia = () => {
 
   return (
     <div className="social-media">
-      <div className="menu-icon" onClick={updateMenu}>
-        <span className={isMenuShown ? "show" : "hidden"}>
-          <AiOutlineFacebook />
-        </span>
-        <span className={isMenuShown ? "show" : "hidden"}>
-          <AiOutlineInstagram />
-        </span>
-        <span className={isMenuShown ? "show" : "hidden"}>
-          <AiOutlineGithub />
-        </span>
-        <span className={isMenuShown ? "show" : "hidden"}>
-          <AiOutlineBehanceSquare />
-        </span>
-        <span className={isMenuShown ? "show" : "hidden"}>
-          <AiOutlineLinkedin />
-        </span>
-        <span onClick={updateMenu}>
-          {isMenuShown ? <AiOutlineClose /> : <BiMenuAltRight />}
-        </span>
-      </div>
+      <span className="menu-icon" onClick={updateMenu}>
+        {isMenuShown ? <AiOutlineClose /> : <BiMenuAltRight />}
+      </span>
+      <ul className="menu-item">
+        {SocialItem.map((item, index) => {
+          return (
+            <li key={index} className={isMenuShown ? "show" : "hidden"}>
+              <a href={item.href} target="_blank" rel="noreferrer">
+                {item.icon && <span>{item.icon}</span>}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

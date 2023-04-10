@@ -1,33 +1,35 @@
-import React from 'react';
-import './home.css';
-// import '../..//animation.css'
-import {TypeAnimation} from 'react-type-animation';
-import {Motion} from 'framer-motion';
-import { fadeIn } from '../../variants'; 
-import  Image  from '../../assets/pic.png';
-
+import React from "react";
+import "./home.css";
+import Image from "../../assets/pic.png";
+import { Fade, Slide } from "react-awesome-reveal";
 const home = () => {
   return (
-    <section className='section' id='home'>
-       
-      <div className='container'>
-        <div className='container-left'>
-              <div className="container-name">
-                <span>Hello! I am</span>
-                <span>NASHRUDIN H.</span>
-                <span>Let me build web stuff for you</span>
+    <section className="home section" id="home">
+      <div className="container home_container">
+        <div className="home_container_left">
+          <div className="container-name">
+            <Fade>
+              <span>Hello! I am</span>
+              <span>NASHRUDIN H.</span>
+              <span>Let me build web stuff for you</span>
               <span>
-              "A Front-end Web Developer who love to turn ideas into reality through web development. I like to craft solid and scalable frontend products with great user experience"
-              </span> 
-              </div>
+                "A Front-end Web Developer who love to turn ideas into reality
+                through web development. I like to craft solid and scalable
+                frontend products with great user experience"
+              </span>
+            </Fade>
+          </div>
         </div>
-        <div className="container-right">
-          <img src={Image} alt="" />
+
+        <div className="home_container_right">
+          <Slide right>
+            {" "}
+            <img src={Image} alt="" />
+          </Slide>
         </div>
       </div>
-      
     </section>
-  )
-}
+  );
+};
 
-export default home
+export default home;

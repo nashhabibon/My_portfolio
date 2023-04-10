@@ -1,0 +1,119 @@
+#about {
+  display: flex;
+  align-items: center;
+}
+
+.about_container_left {
+  flex: 1;
+  display: flex;
+}
+
+.programming {
+  width: 5 00px;
+  height: 400px;
+}
+
+.about_container_right {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.about_container_right p {
+  line-height: 2 !important;
+}
+.about_container_right .name {
+  color: var(--title-color);
+}
+.about_info {
+  grid-template-columns: repeat(3, 140px);
+  margin-bottom: var(--mb-2);
+}
+.about_box {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  box-shadow: 5px 3px 30px black;
+}
+.about_icon {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-0-5);
+}
+.about_title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+.about_sub {
+  font-size: var(--tiny-font-size);
+}
+/* swiper css */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info_container {
+  width: 300px;
+  height: 110px;
+}
+.swiper-pagination-bullet-active {
+  background: var(--title-color) !important;
+}
+.swiper-pagination-horizontal {
+  bottom: 0px !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--text-color) !important;
+}
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (max-width: 992px) {
+  .about_container_left {
+    display: none;
+  }
+  .about_info {
+    justify-content: center;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  #about {
+    margin-top: 70px;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #about {
+    margin-top: 90px;
+    padding-top: 50px;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .info_container {
+    width: 200px;
+  }
+  #about {
+    margin-top: 200px;
+    padding-top: 50px;
+  }
+}

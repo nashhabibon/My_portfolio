@@ -8,7 +8,7 @@
   --body-color: #090a0f;
   --container-color: #fff;
   --bg-light-color: radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%);
-  --bg-dark-color: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  --bg-dark-color: radial-gradient(#1b2735 0%, #090a0f 100%);
 
   /* container width */
   --container-width-lg: 75%;
@@ -105,7 +105,6 @@ img {
 .section {
   padding: 3.5rem 0 2rem;
   height: 100vh;
-  scroll-snap-align: center;
 }
 .container {
   padding: 2rem 5rem;
@@ -113,16 +112,22 @@ img {
   z-index: 2;
   display: flex;
 }
+.container_title {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
 
-.section__title {
+.section_title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
 }
 
-.section__subtitle {
+.section_subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 /*=============== LAYOUT ===============*/
@@ -187,6 +192,9 @@ img {
 }
 
 @media screen and (max-width: 480px) {
+  .container {
+    margin-top: 70px;
+  }
 }
 
 /* For small devices */

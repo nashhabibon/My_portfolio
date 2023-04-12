@@ -102,7 +102,7 @@
 
 @media screen and (max-width: 576px) {
   #about {
-    margin-top: 90px;
+    scroll-margin-top: 90px !important;
     padding-top: 50px;
   }
 }
@@ -111,9 +111,5 @@
 @media screen and (max-width: 350px) {
   .info_container {
     width: 200px;
-  }
-  #about {
-    margin-top: 200px;
-    padding-top: 50px;
   }
 }

@@ -1,0 +1,212 @@
+.section_title {
+  font-size: var(--h2-font-size);
+}
+
+.card_container {
+  grid-template-columns: repeat(2, auto);
+  display: grid;
+  background-color: var(--bg-light-color);
+  border-radius: 25px;
+  column-gap: 5rem;
+  padding: 1rem 2rem;
+  box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 1rem;
+
+  padding: 1rem;
+}
+.contact_card {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.contact_card_icon {
+  font-size: 2rem;
+  color: var(--title-color);
+}
+.message_card {
+  margin-right: 3rem;
+}
+.card_data_title {
+  font-size: var(--small-font-size);
+}
+.card_data_title {
+  font-weight: var(--font-normal);
+  color: grey;
+}
+/* send button */
+button {
+  margin-right: 50%;
+  background: #e8e8e8;
+  color: black;
+  padding: 0.8em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  height: 50px;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover svg {
+  transform: rotate(45deg);
+}
+
+/* card */
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+.group {
+  position: relative;
+}
+
+.form .group label {
+  font-size: 14px;
+  color: rgb(99, 102, 102);
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  transition: all 0.3s ease;
+}
+
+.form .group input,
+.form .group textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  outline: 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  color: white !important;
+}
+
+.form .group input:placeholder-shown + label,
+.form .group textarea:placeholder-shown + label {
+  top: 10px;
+  background-color: transparent;
+}
+
+.form .group input:focus,
+.form .group textarea:focus {
+  border-color: #3366cc;
+}
+
+.form .group input:focus + label,
+.form .group textarea:focus + label {
+  top: -10px;
+  left: 10px;
+  color: #3366cc;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form .group textarea {
+  resize: none;
+  height: 150px;
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media (min-width: 1024px) {
+}
+
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .card_container {
+    column-gap: 3rem;
+  }
+  button .svg-wrapper {
+    margin: 0px;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .card_container {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+    justify-items: center;
+    margin-bottom: 5rem;
+  }
+  .card_info {
+  }
+  .card {
+    width: 100%;
+  }
+  .message_card {
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+}

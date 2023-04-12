@@ -6,13 +6,8 @@ import Info from "./info";
 // import '../..//animation.css'
 
 const About = () => {
-  const [expanded, setExpanded] = useState(false);
-
-  const toggleExpanded = () => {
-    setExpanded(!expanded);
-  };
   return (
-    <div className="section" id="about">
+    <section className="section" id="about">
       <div className="container about_container">
         <div className="about_container_left">
           <img className="programming" src={pic} alt="" />
@@ -33,7 +28,7 @@ const About = () => {
           <Info />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

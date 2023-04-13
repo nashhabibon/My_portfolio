@@ -3,8 +3,8 @@ import { IoIosMail, IoLogoWhatsapp } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
 import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import Alert from "@mui/material/Alert";
-
+import MuiAlert from "@mui/material/Alert";
+import { Snackbar } from "@mui/material";
 const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
@@ -50,7 +50,16 @@ const Contact = () => {
         <h3 className="section_title">Get in touch</h3>
         <span className="section_subtitle">Contact Me</span>
       </div>
-
+      <Snackbar
+        open={isSent}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <MuiAlert severity="success">
+          Your message has been sent successfully, I will send you a message
+          immediately
+        </MuiAlert>
+      </Snackbar>
       <div className="contact_container container grid">
         <div className="card_container">
           <div className="card info_card">
@@ -90,13 +99,6 @@ const Contact = () => {
           <div className="card message_card">
             <label className="card_title">Send a Message</label>
             <form ref={form} onSubmit={sendEmail} className="form">
-              {isSent && (
-                <Alert severity="success" color="info">
-                  Your message has been sent successfully, I will send you a
-                  message immediately
-                </Alert>
-              )}
-
               <div className="group">
                 <input placeholder=" " name="name" type="text" required />
                 <label>Name</label>

@@ -33,7 +33,8 @@ const SocialMedia = () => {
           return (
             <li key={index} className={isMenuShown ? "show" : "hidden"}>
               <a href={item.href} target="_blank" rel="noreferrer">
-                {item.icon && <span>{item.icon}</span>}
+                {item.icon && <span className="icon-item">{item.icon}</span>}
+                {/* {item.title && <span className="icon-title">{item.title}</span>} */}
               </a>
             </li>
           );

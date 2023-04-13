@@ -9,11 +9,13 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  row-gap: 1rem;
 }
 
 .menu-item li {
-  padding: 10px 0;
-  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  font-size: var(--normal-font-size);
 }
 .menu-icon {
   display: none;
@@ -24,6 +26,9 @@
   text-decoration: none;
 }
 
+.menu-item a:hover {
+  color: var(--title-color);
+}
 @media screen and (max-width: 768px) {
   .social-media {
     padding: 5px;
@@ -53,18 +58,18 @@
     position: absolute;
   }
   .social-media li:nth-child(1).show {
-    transform: translate(-350%, 30%) rotate(-20deg);
+    transform: translate(-20%, 200%) rotate(0deg);
   }
   .social-media li:nth-child(2).show {
-    transform: translate(-250%, 100%) rotate(-20deg);
+    transform: translate(-20%, 350%) rotate(0deg);
+    /* transform: translate(-250%, 100%) rotate(-20deg); */
   }
   .social-media li:nth-child(3).show {
-    transform: translate(-150%, 170%) rotate(-20deg);
+    transform: translate(-20%, 500%) rotate(0deg);
+    /* transform: translate(-150%, 170%) rotate(-20deg); */
   }
   .social-media li:nth-child(4).show {
-    transform: translate(-170%, 40%) rotate(-20deg);
-  }
-  .social-media li:nth-child(5).show {
-    transform: translate(-100%, 100%) rotate(-20deg);
+    transform: translate(-20%, 650%) rotate(0deg);
+    /* transform: translate(-170%, 40%) rotate(-20deg); */
   }
 }

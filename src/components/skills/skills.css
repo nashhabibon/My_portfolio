@@ -5,7 +5,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
   border-radius: 1.25rem;
-  box-shadow: 5px 3px 30px black;
+  box-shadow: 1px 1px 2px black;
 }
 .skills_title {
   font-size: var(--normal-font-size);

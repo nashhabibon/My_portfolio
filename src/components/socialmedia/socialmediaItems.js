@@ -1,40 +1,35 @@
-import {
-  AiOutlineFacebook,
-  AiOutlineInstagram,
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineBehanceSquare,
-} from "react-icons/ai";
+import { AiOutlineBehance } from "react-icons/ai";
 
+import { FiGithub } from "react-icons/fi";
+import { GrLinkedinOption, GrFacebookOption } from "react-icons/gr";
 export const SocialItem = [
   {
     id: 0,
-    href: "https://www.facebook.com",
+    href: "https://www.facebook.com/NashrudinHabibon/",
     className: "iconlinks",
-    icon: <AiOutlineFacebook />,
+    icon: <GrFacebookOption />,
+    title: "facebook",
   },
+
   {
     id: 1,
-    href: "",
+    href: "https://github.com/nashhabibon",
     className: "iconlinks",
-    icon: <AiOutlineInstagram />,
+    icon: <FiGithub />,
+    title: "Github",
   },
   {
     id: 2,
-    href: "",
+    href: "https://www.linkedin.com/in/nashrudin-habibon-433ab8a8/",
     className: "iconlinks",
-    icon: <AiOutlineGithub />,
+    icon: <GrLinkedinOption />,
+    title: "Linked",
   },
   {
     id: 3,
-    href: "",
+    href: "https://www.behance.net/nashrudin",
     className: "iconlinks",
-    icon: <AiOutlineLinkedin />,
-  },
-  {
-    id: 4,
-    href: "",
-    className: "iconlinks",
-    icon: <AiOutlineBehanceSquare />,
+    icon: <AiOutlineBehance />,
+    title: "Behance",
   },
 ];

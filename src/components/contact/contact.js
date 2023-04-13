@@ -1,32 +1,59 @@
 import "./contact.css";
 import { IoIosMail, IoLogoWhatsapp } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import Alert from "@mui/material/Alert";
 
 const Contact = () => {
   const form = useRef();
+  const [isSent, setIsSent] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_5uyub14",
-      "template_cabc1am",
-      form.current,
-      "_N4P6bWPI_SF_Dg8k"
-    );
-    e.target.reset();
+    emailjs
+      .sendForm(
+        "service_5uyub14",
+        "template_cabc1am",
+        form.current,
+        "_N4P6bWPI_SF_Dg8k"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setIsSent(true);
+          e.target.reset();
+        },
+        (err) => {
+          console.log(err.text);
+          alert("error on sending message");
+        }
+      );
   };
+  useEffect(() => {
+    let timeoutId;
+
+    if (isSent) {
+      timeoutId = setTimeout(() => {
+        setIsSent(false);
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isSent]);
   return (
     <section className="contact section" id="contact">
       <div className="container_title">
         <h3 className="section_title">Get in touch</h3>
         <span className="section_subtitle">Contact Me</span>
       </div>
+
       <div className="contact_container container grid">
         <div className="card_container">
-          <div className="card">
+          <div className="card info_card">
             <label className="card_title">Contact Information</label>
             <div className="card_info">
               <div className="contact_card">
@@ -63,6 +90,13 @@ const Contact = () => {
           <div className="card message_card">
             <label className="card_title">Send a Message</label>
             <form ref={form} onSubmit={sendEmail} className="form">
+              {isSent && (
+                <Alert severity="success" color="info">
+                  Your message has been sent successfully, I will send you a
+                  message immediately
+                </Alert>
+              )}
+
               <div className="group">
                 <input placeholder=" " name="name" type="text" required />
                 <label>Name</label>
@@ -87,6 +121,7 @@ const Contact = () => {
                 ></textarea>
                 <label>Message</label>
               </div>
+
               <button>
                 <div className="svg-wrapper-1">
                   <div className="svg-wrapper">

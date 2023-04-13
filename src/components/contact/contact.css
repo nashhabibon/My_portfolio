@@ -1,3 +1,5 @@
+.contact {
+}
 .section_title {
   font-size: var(--h2-font-size);
 }
@@ -5,15 +7,19 @@
 .card_container {
   grid-template-columns: repeat(2, auto);
   display: grid;
-  background-color: var(--bg-light-color);
   border-radius: 25px;
-  column-gap: 5rem;
   padding: 1rem 2rem;
   box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
 }
 .card {
   display: flex;
   flex-direction: column;
+}
+.info_card {
+  background: url(../../assets/character.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 500px;
 }
 
 .card_info {
@@ -117,6 +123,7 @@ button:hover svg {
   box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   padding: 1rem;
+  background-color: var(--body-color);
 }
 
 .group {
@@ -145,6 +152,7 @@ button:hover svg {
   outline: none;
   background: transparent;
   color: white !important;
+  font-weight: var(--font-normal);
 }
 
 .form .group input:placeholder-shown + label,
@@ -178,11 +186,11 @@ button:hover svg {
 
 /* For large devices */
 @media screen and (max-width: 992px) {
-  .card_container {
-    column-gap: 3rem;
-  }
   button .svg-wrapper {
     margin: 0px;
+  }
+  .info_card {
+    background-size: 400px;
   }
 }
 
@@ -194,7 +202,8 @@ button:hover svg {
     justify-items: center;
     margin-bottom: 5rem;
   }
-  .card_info {
+  .info_card {
+    background-size: 300px;
   }
   .card {
     width: 100%;
@@ -205,6 +214,9 @@ button:hover svg {
 }
 
 @media screen and (max-width: 480px) {
+  .info_card {
+    display: none;
+  }
 }
 
 /* For small devices */

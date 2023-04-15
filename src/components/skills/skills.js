@@ -2,6 +2,7 @@ import React from "react";
 import Graphic from "./graphic";
 import Frontend from "./frontend";
 import Backend from "./backend";
+// import Swiperskills from "./swiperskills";
 import "./skills.css";
 
 const Skills = () => {
@@ -12,6 +13,8 @@ const Skills = () => {
         <span className="section_subtitle"> My Technical Level</span>
       </div>
       <div className="skills_container container grid">
+        {/* <Swiperskills /> */}
+        <Graphic />
         <Frontend />
         <Backend />
       </div>

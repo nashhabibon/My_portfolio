@@ -192,6 +192,9 @@ button:hover svg {
   .info_card {
     background-size: 400px;
   }
+  .message_card {
+    margin: 0px;
+  }
 }
 
 /* For medium devices */
@@ -208,14 +211,11 @@ button:hover svg {
   .card {
     width: 100%;
   }
-  .message_card {
-    margin: 0px;
-  }
 }
 
 @media screen and (max-width: 480px) {
   .info_card {
-    display: none;
+    background: none;
   }
 }
 

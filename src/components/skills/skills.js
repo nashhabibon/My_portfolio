@@ -12,7 +12,7 @@ const Skills = () => {
         <h2 className="section_title">Skills</h2>
         <span className="section_subtitle"> My Technical Level</span>
       </div>
-      <div className="skills_container container grid">
+      <div className="skills_container container">
         {/* <Swiperskills /> */}
         <Graphic />
         <Frontend />

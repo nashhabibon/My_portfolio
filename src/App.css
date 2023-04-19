@@ -111,12 +111,14 @@ img {
   width: 100%;
   z-index: 2;
   display: flex;
+  height: auto;
+  margin-bottom: 10px;
 }
 .container_title {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .section_title {
@@ -175,6 +177,9 @@ img {
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
   }
+  .section {
+    /* height: auto; */
+  }
 }
 
 /* For medium devices */
@@ -192,9 +197,9 @@ img {
 }
 
 @media screen and (max-width: 480px) {
-  .container {
+  /* .container {
     margin-top: 70px;
-  }
+  } */
 }
 
 /* For small devices */

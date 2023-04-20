@@ -1,0 +1,14 @@
+.footer {
+  height: 50px;
+  background-color: var(--text-color);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: black;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+}
+
+.footer h3 {
+  font-size: var(--normal-font-size);
+  font-weight: var(--small-font-weight);
+}

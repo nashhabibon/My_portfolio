@@ -1,5 +1,7 @@
 .contact {
+  height: auto !important;
 }
+
 .section_title {
   font-size: var(--h2-font-size);
 }
@@ -21,13 +23,11 @@
   background-position: bottom right;
   background-size: 500px;
 }
-
 .card_info {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   margin-top: 1rem;
-
   padding: 1rem;
 }
 .contact_card {
@@ -35,23 +35,21 @@
   align-items: center;
   column-gap: 1rem;
 }
+.contact_card_data {
+  display: flex;
+  flex-direction: column;
+}
 .contact_card_icon {
   font-size: 2rem;
   color: var(--title-color);
 }
-.message_card {
-  margin-right: 3rem;
-}
-.card_data_title {
-  font-size: var(--small-font-size);
-}
 .card_data_title {
   font-weight: var(--font-normal);
+  font-size: var(--small-font-size);
   color: grey;
 }
 /* send button */
 button {
-  margin-right: 50%;
   background: #e8e8e8;
   color: black;
   padding: 0.8em 1.2em;
@@ -123,7 +121,7 @@ button:hover svg {
   box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   padding: 1rem;
-  background-color: var(--body-color);
+  background-color: var(--text-color);
 }
 
 .group {
@@ -148,10 +146,10 @@ button:hover svg {
   outline: 0;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid black;
   outline: none;
   background: transparent;
-  color: white !important;
+  color: black;
   font-weight: var(--font-normal);
 }
 
@@ -200,10 +198,10 @@ button:hover svg {
 /* For medium devices */
 @media screen and (max-width: 768px) {
   .card_container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     row-gap: 3rem;
     justify-items: center;
-    margin-bottom: 5rem;
   }
   .info_card {
     background-size: 300px;
@@ -216,6 +214,12 @@ button:hover svg {
 @media screen and (max-width: 480px) {
   .info_card {
     background: none;
+  }
+  .card_data {
+    word-break: break-all;
+  }
+  .card_container {
+    padding: 0.5rem;
   }
 }
 

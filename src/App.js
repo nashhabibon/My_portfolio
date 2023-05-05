@@ -9,8 +9,7 @@ import Contact from "./components/contact/contact";
 import Portfolio from "./components/portfolio/portfolio";
 import Services from "./components/services/services";
 import SocialMedia from "./components/socialmedia/socialmedia";
-import bg from "./assets/falling-stars.json";
-import Lottie from "lottie-react";
+import Footer from "./components/footer/footer";
 
 function App() {
   return (
@@ -23,6 +22,7 @@ function App() {
       <Services />
       <Portfolio />
       <Contact />
+      <Footer />
     </div>
   );
 }

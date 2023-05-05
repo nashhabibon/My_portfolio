@@ -1,6 +1,7 @@
 #about {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .about_container_left {
@@ -9,8 +10,8 @@
 }
 
 .programming {
-  width: 5 00px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
 }
 
 .about_container_right {
@@ -30,6 +31,7 @@
 .about_info {
   grid-template-columns: repeat(3, 140px);
   margin-bottom: var(--mb-2);
+  justify-content: center;
 }
 .about_box {
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -89,6 +91,9 @@
   }
   .about_info {
     justify-content: center;
+  }
+  .about {
+    height: 100vh;
   }
 }
 

@@ -3,17 +3,16 @@ import "./about.css";
 import pic from "../..//assets/Programming.svg";
 import { Fade, Slide } from "react-awesome-reveal";
 import Info from "./info";
-// import '../..//animation.css'
 
 const About = () => {
   return (
-    <section className="section" id="about">
+    <section className="about section" id="about">
       <div className="container about_container">
         <div className="about_container_left">
           <img className="programming" src={pic} alt="" />
         </div>
         <div className="about_container_right">
-          <h1 className="section__title">Profile</h1>
+          <h1 className="section_title">Profile</h1>
 
           <p>
             Hi, I'm <span className="name">Nashrudin N. Habibon</span>, a web

@@ -91,8 +91,9 @@ const Portfolio = () => {
                     deployments={deployments[index]}
                   />
                 ))}
-
-                <button className="more_button">Show more</button>
+              </div>
+              <div className="show_more">
+                <button>Show more</button>
               </div>
             </>
           ) : (

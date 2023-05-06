@@ -89,7 +89,7 @@
   width: 100%;
 }
 
-.active::after {
+.nav_active::after {
   content: "";
   width: 0%;
   height: 2px;
@@ -98,7 +98,7 @@
   transition: 0.5s;
   width: 100%;
 }
-.active {
+.nav_active {
   margin: 5px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;

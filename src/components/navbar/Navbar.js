@@ -47,7 +47,7 @@ const Navbar = () => {
               <Link
                 key={item.id}
                 to={item.to}
-                activeClass="active"
+                activeClass="nav_active"
                 smooth
                 spy
                 className={item.className}

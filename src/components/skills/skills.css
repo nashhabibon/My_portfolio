@@ -1,10 +1,7 @@
 .skills_container {
   justify-content: center;
-  border: 1px solid #ccc;
 }
-.skills_container > * {
-  border: 1px solid #ccc;
-}
+
 .tab_container {
   justify-content: center;
   max-width: 100%;
@@ -15,29 +12,41 @@
   padding: 0 2rem;
   position: relative;
 }
-.tab_container > div {
-  border: 1px solid #ccc;
-}
+
 .vertical_tabs {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-width: 200px;
 }
+
 .vertical_tabs li {
   font-size: var(--small-font-size);
+  border-left: 2px solid #293c51;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 2px;
 }
+
+.vertical_tabs ul {
+  display: block;
+}
+
 .tab_content {
   width: 600px;
 }
 
-.vertical_tabs li {
+.vertical_tabs li:hover {
+  background-color: #3b4962;
   cursor: pointer;
-  padding: 10px;
 }
 
 .vertical_tabs li.active {
-  /* background-color: #ccc; */
+  text-align: left;
+  padding: 0px 20px 2px;
+  color: var(--title-color);
+  border-left: 2px solid var(--title-color);
 }
 
 .skills_box {
@@ -47,12 +56,14 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 2px black;
   border-radius: 0.75rem;
+  justify-content: center;
   padding: 1rem;
 }
 .skills_group {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
 }
 .skills_data {
@@ -81,6 +92,7 @@
 /* For large devices */
 @media screen and (max-width: 992px) {
   .skills_container {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
   }
@@ -88,11 +100,52 @@
 
 /* For medium devices */
 @media screen and (max-width: 768px) {
+  .tab_container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .tab_content {
+    margin-top: 20px;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .vertical_tabs {
+    text-align: center;
+  }
+
+  .vertical_tabs ul {
+    display: flex;
+    max-width: 100%;
+    border-right: 2px solid #1b232f;
+  }
+  .vertical_tabs li.active {
+    text-align: center;
+    border-bottom: 2px solid var(--title-color);
+    border-left: 2px solid #1b232f;
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .skills {
     margin-top: 70px;
+  }
+  .vertical_tabs li {
+    font-size: var(--smaller-font-size);
+  }
+  .vertical_tabs {
+    min-width: 100%;
+  }
+  .skills_name {
+    font-size: var(--small-font-size);
+  }
+  .skills_level {
+    font-size: var(--smaller-font-size);
+  }
+  .tab_container {
+    padding: 0;
   }
 }
 

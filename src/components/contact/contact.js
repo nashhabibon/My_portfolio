@@ -1,6 +1,8 @@
 import "./contact.css";
 import { IoIosMail, IoLogoWhatsapp } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
+import { RiContactsLine } from "react-icons/ri";
+import { BiMessageDetail } from "react-icons/bi";
 import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import MuiAlert from "@mui/material/Alert";
@@ -63,7 +65,11 @@ const Contact = () => {
       <div className="contact_container container grid">
         <div className="card_container">
           <div className="card info_card">
-            <label className="card_title">Contact Information</label>
+            <div className="card_title">
+              <RiContactsLine />
+              <label>Contact Information</label>
+            </div>
+
             <div className="card_info">
               <div className="contact_card">
                 <i className="contact_card_icon">
@@ -97,7 +103,10 @@ const Contact = () => {
             </div>
           </div>
           <div className="card message_card">
-            <label className="card_title">Send a Message</label>
+            <div className="card_title">
+              <BiMessageDetail />
+              <label>Send Message</label>
+            </div>
             <form ref={form} onSubmit={sendEmail} className="form">
               <div className="group">
                 <input placeholder=" " name="name" type="text" required />
@@ -123,26 +132,27 @@ const Contact = () => {
                 ></textarea>
                 <label>Message</label>
               </div>
-
-              <button>
-                <div className="svg-wrapper-1">
-                  <div className="svg-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z"></path>
-                      <path
-                        fill="currentColor"
-                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                      ></path>
-                    </svg>
+              <div className="btn_container">
+                <button className="contact_btn">
+                  <div className="svg-wrapper-1">
+                    <div className="svg-wrapper">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          fill="currentColor"
+                          d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <span>Send</span>
-              </button>
+                  <span>Send</span>
+                </button>
+              </div>
             </form>
           </div>
         </div>

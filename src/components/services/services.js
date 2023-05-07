@@ -2,7 +2,6 @@ import React from "react";
 import { FiPenTool } from "react-icons/fi";
 import { MdOutlineDashboard } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
-import { HiArrowSmRight } from "react-icons/hi";
 
 import "./services.css";
 
@@ -29,12 +28,6 @@ const services = () => {
                 design, web design, social media graphics, packaging design, and
                 illustration.
               </p>
-              {/* <span>
-                Learn More
-                <i className="button_icon">
-                  <HiArrowSmRight />
-                </i>
-              </span> */}
             </div>
             <div className="services_box">
               <div className="icon_box">
@@ -50,12 +43,6 @@ const services = () => {
                 to create the underlying structure, layout, and functionality of
                 a website.
               </p>
-              {/* <span>
-                Learn More
-                <i className="arrow">
-                  <HiArrowSmRight />
-                </i>
-              </span> */}
             </div>
             <div className="services_box">
               <div className="icon_box">
@@ -70,12 +57,6 @@ const services = () => {
                 on designing user interfaces for websites, mobile apps, and
                 other digital products.
               </p>
-              {/* <span>
-                Learn More
-                <i className="arrow">
-                  <HiArrowSmRight />
-                </i>
-              </span> */}
             </div>
           </div>
         </div>

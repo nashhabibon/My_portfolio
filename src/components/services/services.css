@@ -25,22 +25,13 @@
 .services_box p {
   font-size: var(--small-font-size);
 }
-/* .services_box > *:nth-last-child(-n + 1):hover {
-  transform: scale(1.05);
+
+.services_title {
+  text-align: center;
 }
-.services_box > *:nth-last-child(-n + 1) {
-  display: flex;
-  column-gap: 0.5rem;
-  font-size: var(--small-font-size);
-}
-.services_box > *:nth-last-child(-n + 1) i {
-  align-items: center;
-  display: flex;
-} */
 
 .services_box:hover {
   background-color: var(--title-color);
-  cursor: pointer;
   transform: scale(1.05);
 }
 .services_box:hover .icon_box {
@@ -82,15 +73,15 @@
   .services_box {
     width: 70%;
   }
-  .services {
-    height: auto !important;
-  }
 }
 
 /* For medium devices */
 @media screen and (max-width: 768px) {
   .services_container {
     margin-top: 60px;
+  }
+  .services_box {
+    width: 100%;
   }
 }
 

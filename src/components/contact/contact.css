@@ -5,13 +5,23 @@
 .section_title {
   font-size: var(--h2-font-size);
 }
+.card_title {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.card_title svg {
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
 
 .card_container {
   grid-template-columns: repeat(2, auto);
+  background-color: #17202c;
   display: grid;
   border-radius: 25px;
   padding: 1rem 2rem;
-  box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 3px 6px rgba(0, 0, 0, 0.5);
 }
 .card {
   display: flex;
@@ -40,7 +50,7 @@
   flex-direction: column;
 }
 .contact_card_icon {
-  font-size: 2rem;
+  font-size: var(--h1-font-size);
   color: var(--title-color);
 }
 .card_data_title {
@@ -48,45 +58,46 @@
   font-size: var(--small-font-size);
   color: grey;
 }
-/* send button */
-button {
+/* send.contact_btn */
+.btn_container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+.contact_btn {
+  max-width: 100%;
+  width: 150px;
   background: #e8e8e8;
   color: black;
   padding: 0.8em 1.2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   transition: all 0.3s;
   height: 50px;
 }
-
-button:hover {
+.contact_btn:hover {
   transform: translateY(-3px);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
-
-button:active {
+.contact_btn:active {
   transform: scale(0.95);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-button span {
+.contact_btn span {
   display: block;
   margin-left: 0.4em;
   transition: all 0.3s;
 }
-
-button svg {
+.contact_btn svg {
   width: 18px;
   height: 18px;
   fill: white;
   transition: all 0.3s;
 }
-
-button .svg-wrapper {
+.contact_btn .svg-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,22 +108,14 @@ button .svg-wrapper {
   margin-right: 0.5em;
   transition: all 0.3s;
 }
-
-button:hover .svg-wrapper {
+.contact_btn:hover .svg-wrapper {
   background-color: rgba(255, 255, 255, 0.5);
 }
-
-button:hover svg {
+.contact_btn:hover svg {
   transform: rotate(45deg);
 }
 
 /* card */
-
-.title {
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-}
 
 .form {
   margin-top: 20px;
@@ -121,7 +124,7 @@ button:hover svg {
   box-shadow: 5px 3px 30px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
   padding: 1rem;
-  background-color: var(--text-color);
+  background-color: #f5f7fa;
 }
 
 .group {
@@ -129,8 +132,8 @@ button:hover svg {
 }
 
 .form .group label {
-  font-size: 14px;
-  color: rgb(99, 102, 102);
+  font-size: var(--small-font-size);
+  color: #090a0f;
   position: absolute;
   top: -10px;
   left: 10px;
@@ -169,8 +172,8 @@ button:hover svg {
   top: -10px;
   left: 10px;
   color: #3366cc;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: var(--font-semi-bold);
+  font-size: var(--smaller-font-size);
 }
 
 .form .group textarea {
@@ -184,7 +187,7 @@ button:hover svg {
 
 /* For large devices */
 @media screen and (max-width: 992px) {
-  button .svg-wrapper {
+  .contact_btn .svg-wrapper {
     margin: 0px;
   }
   .info_card {
@@ -212,8 +215,12 @@ button:hover svg {
 }
 
 @media screen and (max-width: 480px) {
+  .card_container {
+    row-gap: 1rem;
+  }
   .info_card {
-    background: none;
+    background-size: 200px;
+    /* background: none; */
   }
   .card_data {
     word-break: break-all;
@@ -221,8 +228,26 @@ button:hover svg {
   .card_container {
     padding: 0.5rem;
   }
+  .card_title {
+    padding: 10px;
+  }
+  .card_info {
+    margin-top: 0;
+  }
+  .card_data {
+    font-size: var(--small-font-size);
+  }
+  .card_data_title {
+    font-size: var(--smaller-font-size);
+  }
+  .contact_container {
+    padding: 0rem;
+  }
 }
 
 /* For small devices */
 @media screen and (max-width: 350px) {
+  .info_card {
+    background-size: 150px;
+  }
 }

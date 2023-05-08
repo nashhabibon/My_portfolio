@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import "./NavbarStyle.css";
 import { MenuItems } from "./MenuItems";
+import { AiOutlineCloudDownload } from "react-icons/ai";
+
 import Logo from "../../assets/logo.png";
 
 const Navbar = () => {
@@ -25,20 +27,10 @@ const Navbar = () => {
     };
   }, []);
 
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
-
   return (
     <nav className={isScrolled ? "navbar scrolled" : "navbar"}>
       <div className="navbar-container">
-        <Link
-          to="home"
-          smooth={true}
-          duration={500}
-          className="navbar-logo"
-          onClick={scrollToTop}
-        >
+        <Link to="home" smooth={true} duration={500} className="navbar-logo">
           <img src={Logo} alt="" className="logo"></img>
         </Link>
         <ul className="nav-menu">

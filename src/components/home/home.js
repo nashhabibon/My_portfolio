@@ -10,21 +10,22 @@ const home = () => {
           <div className="container-name">
             <Fade>
               <span>Hello! I am</span>
-              <span>NASHRUDIN H.</span>
+              <h1>NASHRUDIN H.</h1>
               <span>Let me build web stuff for you</span>
-              <span>
+              <h3>
                 "A Front-end Web Developer who love to turn ideas into reality
                 through web development. I like to craft solid and scalable
                 frontend products with great user experience"
-              </span>
+              </h3>
             </Fade>
           </div>
+          <button className="cv_btn">Resume</button>
         </div>
 
         <div className="home_container_right">
           <Slide right>
             {" "}
-            <img src={Image} alt="" />
+            <img src={Image} alt="Profile" />
           </Slide>
         </div>
       </div>

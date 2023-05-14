@@ -1,6 +1,12 @@
 #home {
   display: flex;
   align-items: center;
+  background: var(--bg-image);
+}
+.home_container {
+  height: calc(100% - 40px);
+  padding: 0 5rem;
+  align-items: center;
 }
 .home_container_left {
   position: relative;
@@ -8,16 +14,30 @@
   flex-direction: column;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  row-gap: 1rem;
+}
+.home_container_right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+.home_container_right img {
+  width: 450px;
 }
 .container-name {
   display: flex;
   flex-direction: column;
 }
-
-.home_container_right {
-  flex: 1;
-  position: relative;
+.container-name h1 {
+  font-size: var(--big-font-size);
+  font-weight: var(--font-extra-bold);
+}
+.container-name h3 {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-normal);
+  text-align: justify;
 }
 
 .container-name > :nth-child(1) {
@@ -51,14 +71,47 @@
   pointer-events: none;
 }
 
+/* cv_btn */
+.cv_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--title-color);
+  box-shadow: #ffdfe2 4px 4px 0px;
+  border-radius: 8px;
+  padding: 15px 10px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: var(--normal-font-size);
+  text-transform: uppercase;
+  min-width: 120px;
+  width: 100px;
+  height: 40px;
+  transform: translate(1) translate(0, 0);
+  transition: transform 225ms, box-shadow 225ms;
+}
+
+.cv_btn:active {
+  transform: translateY(4px) translateX(4px);
+  box-shadow: #094c66 0px 0px 0px;
+}
+
+.cv_btn::after {
+  transform: translateY(0);
+}
+.cv_btn:hover {
+  transform: scale(1.05) translate(0, -0.15rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+}
+
 @media screen and (min-width: 1024px) {
-  .container {
-    flex-direction: row;
-    align-items: center;
-  }
 }
 
 @media screen and (max-width: 992px) {
+  .home {
+    height: 100vh;
+  }
   .home_container {
     flex-direction: column-reverse;
     align-items: center;
@@ -72,6 +125,9 @@
 
 /* For medium devices */
 @media screen and (max-width: 768px) {
+  .home_container {
+    padding: 0 2rem;
+  }
   .home_container_right {
     width: 250px;
   }
@@ -80,6 +136,9 @@
 @media screen and (max-width: 480px) {
   .home_container_right {
     width: 200px;
+  }
+  .home {
+    height: auto !important;
   }
 }
 

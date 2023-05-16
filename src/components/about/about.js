@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./about.css";
 import pic from "../..//assets/Programming.svg";
-import { Fade, Slide } from "react-awesome-reveal";
 import Info from "./info";
 
 const About = () => {

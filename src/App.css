@@ -4,13 +4,21 @@
 :root {
   /*========== Colors ==========*/
   --title-color: #ff1c34;
+
   --text-color: #eeeeee;
   --body-color: #090a0f;
   --box-color: #12171f;
   --container-color: #fff;
   --bg-light-color: radial-gradient(ellipse at bottom, #1b2735 0%, #fff 100%);
   --bg-dark-color: radial-gradient(#1b2735 0%, #090a0f 100%);
-
+  --bg-image: linear-gradient(
+    to left bottom,
+    #3c4257,
+    #303444,
+    #232632,
+    #181a20,
+    #090a0f
+  );
   /* container width */
   --container-width-lg: 75%;
   --container-width-md: 86%;
@@ -87,6 +95,9 @@ ul {
 a {
   text-decoration: none;
 }
+p {
+  text-align: justify;
+}
 
 button {
   cursor: pointer;
@@ -120,7 +131,7 @@ img {
 }
 
 .section_title {
-  font-size: var(--h1-font-size);
+  font-size: var(--h2-font-size);
   color: var(--title-color);
 }
 

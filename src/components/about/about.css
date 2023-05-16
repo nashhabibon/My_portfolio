@@ -2,6 +2,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-image: linear-gradient(
+    to left top,
+    #3c4257,
+    #303444,
+    #232632,
+    #181a20,
+    #090a0f
+  );
+  justify-content: center;
 }
 
 .about_container_left {
@@ -99,22 +108,20 @@
 
 /* For medium devices */
 @media screen and (max-width: 768px) {
-  #about {
-    margin-top: 70px;
-    padding-top: 50px;
-  }
 }
 
 @media screen and (max-width: 576px) {
-  #about {
-    scroll-margin-top: 90px !important;
-    padding-top: 50px;
-  }
 }
 
 /* For small devices */
 @media screen and (max-width: 350px) {
   .info_container {
     width: 200px;
+  }
+  .about {
+    height: auto !important;
+  }
+  .about_container {
+    padding-top: 1rem;
   }
 }

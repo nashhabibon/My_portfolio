@@ -1,3 +1,13 @@
+.services {
+  background-image: linear-gradient(
+    to left top,
+    #3c4257,
+    #303444,
+    #232632,
+    #181a20,
+    #090a0f
+  );
+}
 .services_content {
   display: flex;
   justify-content: center;
@@ -86,6 +96,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .services_container {
+    padding: 0;
+  }
 }
 
 /* For small devices */

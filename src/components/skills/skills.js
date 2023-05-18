@@ -24,17 +24,17 @@ const Skills = () => {
       <div className="skills_container container">
         <div className="tab_container">
           <div className="vertical_tabs">
-            <ul>
+            <div className="tabs">
               {tabs.map((tab, index) => (
-                <li
+                <div
                   key={index}
                   className={index === activeTabIndex ? "active" : ""}
                   onClick={() => handleTabClick(index)}
                 >
                   {tab.label}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           <div className="tab_content">
             <div className="skills_box">{tabs[activeTabIndex].content}</div>

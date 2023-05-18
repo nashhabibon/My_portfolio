@@ -1,3 +1,13 @@
+.skills {
+  background-image: linear-gradient(
+    to left bottom,
+    #3c4257,
+    #303444,
+    #232632,
+    #181a20,
+    #090a0f
+  );
+}
 .skills_container {
   justify-content: center;
 }
@@ -6,11 +16,15 @@
   justify-content: center;
   max-width: 100%;
   width: 900px;
-  min-height: 300px;
+  height: 300px;
+  max-height: 100%;
   display: flex;
   column-gap: 2rem;
-  padding: 0 2rem;
   position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px black;
+  border-radius: 0.75rem;
+  padding: 2rem 0;
 }
 
 .vertical_tabs {
@@ -19,45 +33,52 @@
   align-items: flex-start;
   min-width: 200px;
 }
-
-.vertical_tabs li {
+.tabs {
+  height: 100%;
   font-size: var(--small-font-size);
-  border-left: 2px solid #293c51;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 0 10px 2px;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.vertical_tabs ul {
-  display: block;
+.tabs div {
+  border-right: 2px solid #293c51;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0rem 1rem;
 }
 
 .tab_content {
   width: 600px;
 }
 
-.vertical_tabs li:hover {
+.tabs div:hover {
   background-color: #3b4962;
   cursor: pointer;
 }
 
-.vertical_tabs li.active {
+.tabs div.active {
   text-align: left;
-  padding: 0px 20px 2px;
+  padding-left: 30px;
   color: var(--title-color);
-  border-left: 2px solid var(--title-color);
+  border-right: 3px solid var(--title-color);
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .skills_box {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 2px black;
-  border-radius: 0.75rem;
   justify-content: center;
   padding: 1rem;
+  transition: opacity 0.3s ease-in-out;
+}
+.skills_box {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
 }
 .skills_group {
   display: flex;
@@ -72,10 +93,10 @@
   align-items: center;
 }
 .skills_info {
-  line-height: 1.5;
+  line-height: 1.2;
 }
 .skills_level {
-  font-size: var(--small-font-size);
+  font-size: var(--smaller-font-size);
   color: grey;
 }
 .skills_data svg {
@@ -91,18 +112,19 @@
 
 /* For large devices */
 @media screen and (max-width: 992px) {
-  .skills_container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-/* For medium devices */
-@media screen and (max-width: 768px) {
   .tab_container {
+    height: auto;
     flex-direction: column;
     justify-content: flex-start;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+    align-items: center !important;
+    padding: 0;
+  }
+  .tabs {
+    flex-direction: row;
+    justify-content: center;
   }
 
   .tab_content {
@@ -110,34 +132,43 @@
     display: flex;
     max-width: 100%;
     justify-content: center;
+    max-height: 350px;
+    height: 300px;
+    border: 1px solid #ccc;
+    align-items: flex-start;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px black;
+    border-radius: 0.75rem;
   }
+
+  .vertical_tabs {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+  }
+  .tabs div {
+    border: none !important;
+  }
+  .tabs div.active {
+    text-align: center !important;
+    padding-left: 1rem;
+  }
+  .skills_container {
+    padding: 0;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
   .vertical_tabs {
     text-align: center;
   }
 
-  .vertical_tabs ul {
-    display: flex;
-    max-width: 100%;
-    border-right: 2px solid #1b232f;
-  }
-  .vertical_tabs li.active {
-    text-align: center;
-    border-bottom: 2px solid var(--title-color);
-    border-left: 2px solid #1b232f;
-    padding: 10px;
+  .skills_group {
+    gap: 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .skills {
-    margin-top: 70px;
-  }
-  .vertical_tabs li {
-    font-size: var(--smaller-font-size);
-  }
-  .vertical_tabs {
-    min-width: 100%;
-  }
   .skills_name {
     font-size: var(--small-font-size);
   }
@@ -151,4 +182,10 @@
 
 /* For small devices */
 @media screen and (max-width: 350px) {
+  .skills_box {
+    padding: 10px;
+  }
+  .tab_content {
+    height: auto;
+  }
 }

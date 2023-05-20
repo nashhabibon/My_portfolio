@@ -92,9 +92,9 @@ const Portfolio = () => {
                   />
                 ))}
               </div>
-              <div className="show_more">
-                <button>Show more</button>
-              </div>
+              {/* <div className="show_more">
+                <button className="btn_show">Show more</button>
+              </div> */}
             </>
           ) : (
             <div className="projects_container">

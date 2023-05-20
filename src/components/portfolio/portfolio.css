@@ -1,6 +1,8 @@
 .portfolio {
   height: auto;
+  background: var(--bg-image);
 }
+
 .projects_container {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -126,6 +128,9 @@
 
 /* For medium devices */
 @media screen and (max-width: 768px) {
+  .portfolio {
+    padding: 1rem 0;
+  }
   .projects_card {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -147,6 +152,13 @@
 }
 
 @media screen and (max-width: 480px) {
+  .projects_card {
+    padding: 0;
+    margin: 0;
+  }
+  .projects_container {
+    margin-top: 20px;
+  }
 }
 
 /* For small devices */

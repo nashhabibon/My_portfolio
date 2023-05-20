@@ -1,5 +1,13 @@
 .contact {
   height: auto !important;
+  background: linear-gradient(
+    to left top,
+    #3c4257,
+    #303444,
+    #232632,
+    #181a20,
+    #090a0f
+  );
 }
 
 .section_title {
@@ -17,11 +25,8 @@
 
 .card_container {
   grid-template-columns: repeat(2, auto);
-  background-color: #17202c;
   display: grid;
-  border-radius: 25px;
   padding: 1rem 2rem;
-  box-shadow: 5px 3px 6px rgba(0, 0, 0, 0.5);
 }
 .card {
   display: flex;

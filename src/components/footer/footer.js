@@ -53,6 +53,9 @@ const Footer = () => {
             <SiUpwork />
           </a>
         </div>
+        <span className="motto">
+          "<i>WORK,</i> that's how you get it"
+        </span>
       </div>
     </section>
   );

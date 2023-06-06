@@ -1,14 +1,60 @@
 .footer {
-  height: 50px;
-  background-color: var(--text-color);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: black;
+  height: 250px;
+  background-color: var(--box-color);
+  color: var(--text-color);
   display: flex;
   padding: 2rem;
+}
+.footer-container {
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 0;
 }
 
-.footer h3 {
-  font-size: var(--normal-font-size);
-  font-weight: var(--small-font-weight);
+.social_media {
+  margin: 10px 0px;
+  column-gap: 0.75rem;
+  display: flex;
+}
+.social_media a {
+  width: 40px;
+  height: 40px;
+  background-color: var(--title-color);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  border-radius: 0.5rem;
+}
+.social_media a:hover {
+  background-color: var(--text-color);
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+}
+
+.motto {
+  font-size: var(--smaller-font-size);
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media (min-width: 1024px) {
+}
+
+/* For large devices lg*/
+@media screen and (max-width: 992px) {
+}
+
+/* For medium devices md */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
 }

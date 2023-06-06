@@ -8,6 +8,11 @@
     #181a20,
     #090a0f
   );
+  padding-bottom: 0px;
+}
+.contact_container {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .section_title {

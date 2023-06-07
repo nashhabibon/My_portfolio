@@ -8,14 +8,12 @@ import Skills from "./components/skills/skills";
 import Contact from "./components/contact/contact";
 import Portfolio from "./components/portfolio/portfolio";
 import Services from "./components/services/services";
-import SocialMedia from "./components/socialmedia/socialmedia";
 import Footer from "./components/footer/footer";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <SocialMedia />
       <Home />
       <About />
       <Skills />

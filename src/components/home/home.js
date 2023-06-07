@@ -14,7 +14,6 @@ const home = () => {
     link.click();
     document.body.removeChild(link);
   };
-  console.log(downloadDocx);
   return (
     <section className="home section" id="home">
       <div className="container home_container">

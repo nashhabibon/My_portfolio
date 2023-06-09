@@ -80,7 +80,7 @@
   align-items: flex-end;
 }
 
-.projects_card:hover {
+.social_preview:hover {
   cursor: pointer;
   transform: translateY(-5px);
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
@@ -105,11 +105,32 @@
   object-fit: cover;
   transition: 0.2s all ease-out;
 }
-.show_more {
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: inline-flex;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.popup_content img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 400px;
+  margin-bottom: 10px;
+}
+
+.btn_close_popup {
+  float: right;
+  cursor: pointer;
 }
 
 /*=============== BREAKPOINTS ===============*/

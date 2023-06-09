@@ -1,22 +1,46 @@
+import React, { useState } from "react";
 import { format } from "date-fns";
 import { FiGithub, FiExternalLink, FiPlay } from "react-icons/fi";
+import { MdPlayDisabled, MdOutlineClose } from "react-icons/md";
 
 const Github = (props) => {
-  const handleClick = () => {
-    window.open(props.html_url, "_blank");
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleImageClick = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
-    <div className="projects_card" onClick={handleClick}>
+    <div className="projects_card">
       <div className="projects_card_image">
         {props.socialPreview && props.socialPreview.length > 0 ? (
           <img
             className="social_preview"
             src={props.socialPreview}
             alt={`${props.name} Social Preview`}
+            onClick={handleImageClick}
           />
         ) : (
           <img className="social_preview" src="" alt="No Social Preview" />
+        )}
+
+        {showPopup && (
+          <div className="popup">
+            <div className="popup_content">
+              <button className="btn_close_popup" onClick={closePopup}>
+                <MdOutlineClose />
+              </button>
+              <img
+                className="social_preview_popup"
+                src={props.socialPreview}
+                alt={`${props.name} Social Preview`}
+              />
+            </div>
+          </div>
         )}
       </div>
       <div className="project_card_info">
@@ -48,13 +72,18 @@ const Github = (props) => {
             <FiGithub />
           </a>
 
+          {/* if deployment url == true external link display , else play button*/}
           {props.deployments && props.deployments.length > 0 ? (
             <a href={props.html_url} target="blank">
               <FiExternalLink />
             </a>
           ) : (
-            <a href={props.html_url} target="blank">
-              <FiPlay />
+            <a
+              href="#"
+              style={{ cursor: "not-allowed", pointerEvents: "none" }}
+            >
+              <MdPlayDisabled />
+              {/* <FiPlay /> */}
             </a>
           )}
         </div>

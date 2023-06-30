@@ -164,3 +164,16 @@
     display: none !important;
   }
 }
+@media screen and (max-width: 480px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .nav-menu {
+    gap: 10px;
+  }
+  .nav_links {
+    padding: 2px;
+    display: flex;
+  }
+}

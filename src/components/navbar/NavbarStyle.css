@@ -170,10 +170,10 @@
 /* For small devices */
 @media screen and (max-width: 350px) {
   .nav-menu {
-    gap: 10px;
+    gap: 0;
   }
   .nav_links {
-    padding: 2px;
+    flex-wrap: wrap;
     display: flex;
   }
 }

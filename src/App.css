@@ -19,6 +19,7 @@
     #181a20,
     #090a0f
   );
+
   /* container width */
   --container-width-lg: 75%;
   --container-width-md: 86%;
@@ -84,8 +85,9 @@ textarea {
 }
 
 body {
-  background: var(--bg-dark-color);
+  /* background: var(--bg-dark-color); */
   color: var(--text-color);
+  background: var(--bg-image);
 }
 
 ul {
@@ -197,7 +199,7 @@ img {
     padding: 1rem 1rem 2rem;
   }
   .container {
-    padding: 0 2rem;
+    padding: 0 1rem;
     max-width: 720px;
   }
   body {

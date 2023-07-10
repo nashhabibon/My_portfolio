@@ -7,6 +7,7 @@ import "./portfolio.css";
 
 const Portfolio = () => {
   const [items, setItems] = useState([]);
+  const [unique, setUnique] = useState([]);
   const [error, setError] = useState(null);
   const [languages, setLanguages] = useState([]);
   const [socialpreview, setSocialpreview] = useState([]);
@@ -20,7 +21,15 @@ const Portfolio = () => {
           `https://api.github.com/users/${users}/repos?page=1&per_page=3&sort=updated`
         );
         const data = await res.json();
-        const sortedData = data.sort(
+
+        //Fetch repo name with * on it's name
+        const repositoriesWithPattern = data.filter((repo) =>
+          repo.name.startsWith("-")
+        );
+        setUnique(repositoriesWithPattern);
+
+        //sorteddata
+        const sortedData = repositoriesWithPattern.sort(
           (a, b) => new Date(b.created_at) - new Date(a.created_at)
         );
         setItems(sortedData);
@@ -99,21 +108,7 @@ const Portfolio = () => {
           ) : (
             <div className="projects_container">
               <div className="projects_card">
-                <div className="projects_card_image"></div>
-                <div className="project_card_description">
-                  <a href="#" target="blank">
-                    <span className="title">title</span>
-                  </a>
-                  <span className="project_created_date">dated created</span>
-                  <br />
-                  <p> description</p>
-                </div>
-                <div className="projects_card_footer">
-                  <span className="projects_language">
-                    {" "}
-                    programming language
-                  </span>
-                </div>
+                <span>No project to display from github</span>
               </div>
             </div>
           )}

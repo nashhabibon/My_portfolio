@@ -36,7 +36,7 @@
   padding: 0 0.5rem;
   position: relative;
 }
-.project_card_description {
+.project_card_description p {
   text-align: left;
 }
 .projects_card:nth-of-type(2n + 1)

@@ -44,6 +44,7 @@ const Github = (props) => {
             </div>
           )}
         </div>
+
         <div className="project_card_info">
           <a href={props.html_url} target="blank">
             <span className="title">{props.name}</span>
@@ -73,9 +74,9 @@ const Github = (props) => {
               <FiGithub />
             </a>
 
-            {/* if deployment url == true external link display , else play button*/}
-            {props.deployments && props.deployments.length > 0 ? (
-              <a href={props.html_url} target="blank">
+            {/* if homepage url == true external link display , else play button*/}
+            {props.homepage && props.homepage.length > 0 ? (
+              <a href={props.homepage} target=".blank">
                 <FiExternalLink />
               </a>
             ) : (

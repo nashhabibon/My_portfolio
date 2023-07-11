@@ -11,7 +11,6 @@ const Portfolio = () => {
   const [error, setError] = useState(null);
   const [languages, setLanguages] = useState([]);
   const [socialpreview, setSocialpreview] = useState([]);
-  const [deployments, setDeployments] = useState([]);
   const [users] = useState("nashhabibon");
 
   useEffect(() => {
@@ -59,19 +58,6 @@ const Portfolio = () => {
           sortedData.map((repo) => getSocialPreview(repo))
         );
         setSocialpreview(socialPreviewData);
-
-        // Fetch deployments URL for each repository
-        const newDeployments = await Promise.all(
-          sortedData.map((repo) =>
-            fetch(repo.deployments_url.replace(/\{\/id\}/, "")).then((res) =>
-              res.json()
-            )
-          )
-        );
-        const deploymentUrls = newDeployments.map(
-          (deployment) => deployment.html_url
-        );
-        setDeployments(deploymentUrls);
       } catch (error) {
         setError(error);
       }
@@ -97,7 +83,6 @@ const Portfolio = () => {
                     {...item}
                     languages={languages[index]}
                     socialPreview={socialpreview[index]}
-                    deployments={deployments[index]}
                   />
                 ))}
               </div>
@@ -123,21 +108,8 @@ const Portfolio = () => {
           <span className="section_subtitle"> Featured Project</span>
         </div>
         <div className="container grid">
-          <div className="projects_card">
-            error : {error.message}
-            <div className="projects_card_image"></div>
-            <div className="project_card_description">
-              <a href="#" target="blank">
-                <span className="title">title</span>
-              </a>
-              <span className="project_created_date">dated created</span>
-              <br />
-              <p> description</p>
-            </div>
-            <div className="projects_card_footer">
-              <span className="projects_language"> programming language</span>
-            </div>
-          </div>
+          <div className="projects_card">error : {error.message}</div>
+          <span>There's an error on fetchRepos "Error 403"</span>
         </div>
       </section>
     );

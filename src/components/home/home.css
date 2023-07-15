@@ -126,7 +126,7 @@
 /* For medium devices */
 @media screen and (max-width: 768px) {
   .home_container {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   .home_container_right {
     width: 250px;
@@ -144,4 +144,7 @@
 
 /* For small devices */
 @media screen and (max-width: 350px) {
+  .home_container {
+    padding: 0;
+  }
 }

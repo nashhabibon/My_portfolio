@@ -122,6 +122,6 @@
     height: auto !important;
   }
   .about_container {
-    padding-top: 1rem;
+    padding: 1rem 0;
   }
 }

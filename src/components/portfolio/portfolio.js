@@ -17,7 +17,7 @@ const Portfolio = () => {
     const fetchRepos = async () => {
       try {
         const res = await fetch(
-          `https://api.github.com/users/${users}/repos?page=1&per_page=3&sort=updated`
+          `https://api.github.com/users/${users}/repos?page=1&per_page=100&sort=updated`
         );
         const data = await res.json();
 

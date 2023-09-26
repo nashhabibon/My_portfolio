@@ -2,14 +2,14 @@ import React from "react";
 import "./home.css";
 import Image from "../../assets/pic.png";
 import { Fade, Slide } from "react-awesome-reveal";
-import Resume from "../../../src/assets/Habibon_Nashrudin_Resume.docx";
+import Resume from "../../../src/assets/Habibon_Nashrudin_Resume.pdf";
 
 const home = () => {
   const downloadDocx = () => {
     const url = Resume;
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", "Habibon_Resume.docx");
+    link.setAttribute("download", "Habibon_Resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

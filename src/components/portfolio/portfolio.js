@@ -109,6 +109,7 @@ const Portfolio = () => {
         </div>
         <div className="container grid">
           <div className="projects_card">error : {error.message}</div>
+          <span> Interaction limits</span>
           <span>There's an error on fetchRepos "Error 403"</span>
         </div>
       </section>
